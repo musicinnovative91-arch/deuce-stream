@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Deuce Prolifik | Stream</title>
+
+<style>
+/* Body and background */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background: url('your-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* Overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* Hero section */
+.hero {
+  padding: 120px 20px;
+  background: linear-gradient(180deg, rgba(26,0,51,0.5), rgba(12,12,22,0.5));
+}
+
+.logo {
+  width: 320px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 30px rgba(145,71,255,0.7);
+  border-radius: 12px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  letter-spacing: 3px;
+  color: #a970ff;
+  text-shadow: 0 0 20px rgba(169,112,255,0.8);
+}
+
+.hero p {
+  opacity: 0.9;
+  font-size: 18px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.live-indicator {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff3b3b;
+  display: none;
+  animation: pulse 1.2s infinite;
+}
+
+/* Live indicator pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 32px;
+  background: #9147ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: .3s;
+  box-shadow: 0 0 20px rgba(145,71,255,0.6);
+}
+
+.btn:hover {
+  background: #772ce8;
+  transform: scale(1.05);
+}
+
+/* Sections */
+.section {
+  padding: 70px 20px;
+  background: rgba(12,12,22,0.7);
+  margin: 0 auto;
+  border-radius: 12px;
+  max-width: 900px;
+}
+
+/* Iframes */
+iframe {
+  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(145,71,255,0.4);
+  width: 100%;
+  max-width: 850px;
+  height: 480px;
+  margin: 20px 0;
+}
+
+/* Schedule */
+.schedule {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(20,20,37,0.8);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 12px;
+  border-bottom: 1px solid #333;
+}
+
+/* Social links */
+.social a {
+  margin: 0 15px;
+  font-size: 20px;
+  color: #a970ff;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.social a:hover {
+  color: white;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+  <img src="logo.jpg" class="logo">
+
+  <h1>DEUCE PROLIFIK</h1>
+
+  <p>Gaming • Streaming • Community</p>
+
+  <div id="liveStatus" class="live-indicator">
+    🔴 LIVE NOW ON TWITCH
+  </div>
+
+  <a class="btn" href="https://www.twitch.tv/deuceprolifik" target="_blank">
+    Watch Live on Twitch
+  </a>
+
+</div>
+
+<div class="section">
+  <h2>Live Stream</h2>
+  <iframe
+    src="https://player.twitch.tv/?channel=deuceprolifik&parent=your-github-username.github.io"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<div class="section">
+  <h2>Featured Video</h2>
+  <iframe 
+    src="https://www.youtube.com/embed/OGwPJytYDHM"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<div class="section">
+  <h2>Stream Schedule</h2>
+  <div class="schedule">
+    <table>
+      <tr><th>Day</th><th>Time</th></tr>
+      <tr><td>Monday</td><td>6 AM – 11 AM</td></tr>
+      <tr><td>Thursday</td><td>3 PM – 7 PM</td></tr>
+      <tr><td>Friday</td><td>6 AM – 11 AM</td></tr>
+      <tr><td>Saturday</td><td>6 AM – 11 AM</td></tr>
+      <tr><td>Sunday</td><td>6 AM – 11 AM</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Follow</h2>
+  <div class="social">
+    <a href="https://www.instagram.com/deuceyp1982/">Instagram</a>
+    <a href="https://www.tiktok.com/@deucey39">TikTok</a>
+    <a href="https://www.twitch.tv/deuceprolifik">Twitch</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 Deuce Prolifik
+</footer>
+
+<script>
+async function checkLive() {
+  try {
+    let response = await fetch("https://decapi.me/twitch/uptime/deuceprolifik");
+    let text = await response.text();
+    document.getElementById("liveStatus").style.display = text.includes("offline") ? "none" : "block";
+  } catch(e) {
+    console.error(e);
+  }
+}
+
+// Check immediately and every 60 seconds
+checkLive();
+setInterval(checkLive, 60000);
+</script>
+
+</body>
+</html>
