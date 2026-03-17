@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Deuce Prolifik | Gaming Stream</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -36,7 +35,6 @@ body::after{
   100% { background-position: 100% 0%, 0% 100%; }
 }
 
-/* Navigation */
 .nav{
   position:fixed;
   top:0;
@@ -44,7 +42,6 @@ body::after{
   background:rgba(0,0,0,.85);
   padding:15px 0;
   z-index:10;
-  box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 
 .nav a{
@@ -52,15 +49,8 @@ body::after{
   color:#a970ff;
   text-decoration:none;
   font-weight:700;
-  transition: 0.3s;
-  font-size:1em;
-}
-.nav a:hover{
-  color:#ff49f0;
-  text-shadow: 0 0 10px #ff49f0;
 }
 
-/* Hero Section */
 .hero{
   padding:140px 20px 60px;
 }
@@ -75,11 +65,9 @@ body::after{
 h1{
   font-size:2.8em;
   margin:0 0 15px;
-  color: #fff;
   text-shadow: 0 0 15px #9146FF, 0 0 30px #FF00FF;
 }
 
-/* LIVE NOW Button */
 .live-now {
   display:inline-block;
   background: linear-gradient(90deg, #ff0000, #ff4d4d);
@@ -90,18 +78,13 @@ h1{
   margin-bottom:20px;
   text-decoration:none;
   font-size:1.3em;
-  box-shadow:0 0 35px rgba(255,0,0,0.7);
   animation: pulse 1.2s infinite;
-  text-transform: uppercase;
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 15px rgba(255,0,0,0.5); transform: scale(1); }
-  50% { box-shadow: 0 0 50px rgba(255,0,0,1); transform: scale(1.05); }
-  100% { box-shadow: 0 0 15px rgba(255,0,0,0.5); transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
-/* Streams & YouTube */
 .stream, .youtube{
   width:95%;
   max-width:900px;
@@ -109,129 +92,62 @@ h1{
   border-radius:15px;
   margin:25px auto;
   display:block;
-  box-shadow:0 0 50px rgba(145,71,255,0.6);
 }
 
-/* Sections */
 .section{
   padding:60px 20px;
 }
 
-h2{
-  font-size:2.2em;
-  color:#fff;
-  text-shadow: 0 0 10px #9146FF, 0 0 25px #FF00FF;
-  margin-bottom:25px;
-}
-
-/* Clips Section */
-.clips{
-  display:flex;
-  gap:15px;
-  overflow-x:auto;
-  justify-content:center;
-}
-.clip{
-  min-width:280px;
-  height:180px;
-  border-radius:12px;
-  box-shadow:0 0 25px rgba(255,0,255,0.5);
-}
-
-/* Schedule */
-.schedule{
-  background:rgba(20,20,37,.85);
-  padding:20px;
-  border-radius:15px;
-  max-width:600px;
-  margin:auto;
-  box-shadow:0 0 25px rgba(145,71,255,0.5);
-}
-table{
-  width:100%;
-  border-collapse: collapse;
-}
-td, th{
-  padding:12px;
-  font-weight:600;
-}
-
-/* Live Chat */
 .chat{
   width:100%;
   max-width:380px;
   height:400px;
   border-radius:15px;
   margin:20px auto;
-  box-shadow:0 0 30px rgba(145,71,255,0.5);
 }
 
-/* Social Links */
+.clips{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+  justify-content:center;
+}
+
+.clip{
+  min-width:280px;
+  height:180px;
+}
+
+.schedule{
+  background:rgba(20,20,37,.85);
+  padding:20px;
+  border-radius:15px;
+  max-width:600px;
+  margin:auto;
+}
+
+table{
+  width:100%;
+}
+
 .social a{
   margin:0 15px;
   font-weight:bold;
   text-decoration:none;
-  font-size:1.2em;
-  transition:0.3s;
 }
-.social a:hover{
-  text-shadow:0 0 15px #ff49f0;
-}
-.instagram{color:#E1306C;}
-.tiktok{color:#69C9D0;}
-.youtubeLink{color:#FF0000;}
-.twitch{color:#9146FF;}
 
-/* Games Logos */
 .games-logos {
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
   gap:25px;
-  margin-top:20px;
 }
 .games-logos img {
   width:100px;
-  height:auto;
-  border-radius:10px;
-  box-shadow:0 0 20px rgba(145,71,255,0.6);
-  transition: transform 0.3s, box-shadow 0.6s;
-  animation: pulseGames 2s infinite alternate;
-}
-.games-logos img:hover {
-  transform: scale(1.15);
-  box-shadow:0 0 50px rgba(145,71,255,1);
-}
-@keyframes pulseGames {
-  0% { box-shadow:0 0 15px rgba(145,71,255,0.4); }
-  50% { box-shadow:0 0 35px rgba(145,71,255,0.8); }
-  100% { box-shadow:0 0 15px rgba(145,71,255,0.4); }
 }
 
-/* Footer */
 footer{
   padding:20px;
-  font-weight:600;
-  text-shadow:0 0 10px #9146FF;
-}
-
-/* Responsive Design */
-@media (max-width:1000px){
-  .stream, .youtube { height:420px; }
-  h1{ font-size:2.4em; }
-  h2{ font-size:2em; }
-}
-
-@media (max-width:700px){
-  .hero{padding:100px 15px 40px;}
-  .stream, .youtube { height:300px; width:100%; }
-  .chat{ width:100%; height:300px; margin-bottom:15px; }
-  .clip{ min-width:220px; height:150px; }
-  .nav a{ font-size:0.9em; margin:0 10px; }
-  h1{ font-size:2em; }
-  h2{ font-size:1.7em; }
-  .live-now{ font-size:1.1em; padding:10px 20px; }
-  .games-logos img{ width:80px; }
 }
 </style>
 </head>
@@ -251,12 +167,11 @@ footer{
   <img src="logo.jpg" class="logo">
   <h1>DEUCE PROLIFIK</h1>
 
-  <!-- LIVE NOW BUTTON -->
   <a href="https://www.twitch.tv/deuceprolifik" target="_blank" class="live-now">LIVE NOW</a>
 
-  <!-- TWITCH -->
+  <!-- TWITCH STREAM -->
   <iframe class="stream"
-    src="https://player.twitch.tv/?channel=deuceprolifik&parent=deuceprolifik.com"
+    src="https://player.twitch.tv/?channel=deuceprolifik&parent=deuceprolifik.com&parent=www.deuceprolifik.com"
     allowfullscreen>
   </iframe>
 
@@ -270,15 +185,20 @@ footer{
 <div class="section" id="stream">
   <h2>Live Chat</h2>
   <iframe class="chat"
-    src="https://www.twitch.tv/embed/deuceprolifik/chat?parent=deuceprolifik.com">
+    src="https://www.twitch.tv/embed/deuceprolifik/chat?parent=deuceprolifik.com&parent=www.deuceprolifik.com">
   </iframe>
 </div>
 
 <div class="section" id="clips">
   <h2>Clips</h2>
   <div class="clips">
-    <iframe class="clip" src="https://clips.twitch.tv/embed?clip=AwkwardHelplessSalamanderPastaThat&parent=deuceprolifik.com"></iframe>
-    <iframe class="clip" src="https://clips.twitch.tv/embed?clip=InventiveGenerousTruffleTriHard&parent=deuceprolifik.com"></iframe>
+    <iframe class="clip"
+      src="https://clips.twitch.tv/embed?clip=AwkwardHelplessSalamanderPastaThat&parent=deuceprolifik.com&parent=www.deuceprolifik.com">
+    </iframe>
+
+    <iframe class="clip"
+      src="https://clips.twitch.tv/embed?clip=InventiveGenerousTruffleTriHard&parent=deuceprolifik.com&parent=www.deuceprolifik.com">
+    </iframe>
   </div>
 </div>
 
@@ -299,21 +219,20 @@ footer{
 <div class="section" id="follow">
   <h2>Follow</h2>
   <div class="social">
-    <a class="instagram" href="https://www.instagram.com/deuceyp1982/">Instagram</a>
-    <a class="tiktok" href="https://www.tiktok.com/@deucey39">TikTok</a>
-    <a class="youtubeLink" href="https://www.youtube.com/">YouTube</a>
-    <a class="twitch" href="https://www.twitch.tv/deuceprolifik">Twitch</a>
+    <a href="https://www.instagram.com/deuceyp1982/">Instagram</a>
+    <a href="https://www.tiktok.com/@deucey39">TikTok</a>
+    <a href="https://www.youtube.com/">YouTube</a>
+    <a href="https://www.twitch.tv/deuceprolifik">Twitch</a>
   </div>
 </div>
 
-<!-- Games I Play Section -->
 <div class="section" id="games">
   <h2>Games I Play</h2>
   <div class="games-logos">
-    <img src="game1.png" alt="Game 1 Logo">
-    <img src="game2.png" alt="Game 2 Logo">
-    <img src="game3.png" alt="Game 3 Logo">
-    <img src="game4.png" alt="Game 4 Logo">
+    <img src="game1.png">
+    <img src="game2.png">
+    <img src="game3.png">
+    <img src="game4.png">
   </div>
 </div>
 
