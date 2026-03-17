@@ -28,170 +28,97 @@ animation:moveGlow 14s infinite alternate;
 pointer-events:none;
 }
 
-@keyframes moveGlow{
-0%{transform:translateY(0)}
-100%{transform:translateY(-60px)}
-}
-
 .nav{
 position:fixed;
 top:0;
 width:100%;
 background:rgba(10,10,20,.8);
 padding:12px;
-backdrop-filter:blur(8px);
 z-index:10;
 }
 
 .nav a{
 margin:0 20px;
-text-decoration:none;
 color:#a970ff;
-font-size:18px;
-}
-
-.nav a:hover{
-color:white;
-text-shadow:0 0 10px #a970ff;
+text-decoration:none;
 }
 
 .hero{
-padding:140px 20px 80px;
-background:linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,.6));
+padding:120px 20px 60px;
 }
 
 .logo{
-width:320px;
+width:300px;
 border-radius:12px;
 box-shadow:0 0 40px rgba(145,71,255,.7);
-}
-
-.hero h1{
-font-size:56px;
-letter-spacing:4px;
-color:#b68cff;
-text-shadow:0 0 10px #a970ff,0 0 30px #9147ff,0 0 60px #9147ff;
-}
-
-.live{
-display:none;
-font-size:22px;
-color:#ff3b3b;
-animation:pulse 1.2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.1)}
-100%{transform:scale(1)}
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 32px;
-background:#9147ff;
-border-radius:10px;
-text-decoration:none;
-color:white;
-font-size:18px;
-box-shadow:0 0 25px rgba(145,71,255,.7);
-}
-
-.btn:hover{
-background:#772ce8;
-}
-
-.section{
-padding:70px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.streamWrap{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
 }
 
 .stream{
 width:850px;
 height:480px;
 border-radius:12px;
-box-shadow:0 0 40px rgba(145,71,255,.6);
-border:none;
+margin-top:20px;
 }
 
-.chat{
-width:350px;
-height:480px;
+.youtube{
+width:800px;
+height:450px;
 border-radius:12px;
-border:none;
-box-shadow:0 0 25px rgba(145,71,255,.5);
-}
-
-.viewer{
-margin-top:10px;
-font-size:18px;
-color:#a970ff;
-}
-
-.offline{
-display:none;
 margin-top:30px;
-font-size:28px;
-letter-spacing:2px;
-color:#ccc;
+}
+
+.section{
+padding:60px 20px;
 }
 
 .clips{
 display:flex;
 gap:20px;
 overflow-x:auto;
-padding:20px;
 }
 
 .clip{
-min-width:320px;
-height:180px;
-border:none;
+min-width:300px;
+height:170px;
 border-radius:12px;
-box-shadow:0 0 25px rgba(145,71,255,.5);
 }
 
 .schedule{
-background:rgba(20,20,37,.85);
-padding:25px;
-border-radius:12px;
-box-shadow:0 0 25px rgba(145,71,255,.3);
+background:rgba(20,20,37,.8);
+padding:20px;
+border-radius:10px;
+max-width:600px;
+margin:auto;
 }
 
 table{
 width:100%;
-border-collapse:collapse;
 }
 
 td,th{
-padding:12px;
-border-bottom:1px solid #444;
+padding:10px;
+}
+
+.chat{
+width:350px;
+height:480px;
+border-radius:12px;
+margin-top:20px;
 }
 
 .social a{
 margin:0 15px;
-font-size:20px;
-color:#a970ff;
+font-weight:bold;
 text-decoration:none;
 }
 
-.social a:hover{
-color:white;
-text-shadow:0 0 15px #a970ff;
-}
+.instagram{color:#E1306C;}
+.tiktok{color:#69C9D0;}
+.youtubeLink{color:#FF0000;}
+.twitch{color:#9146FF;}
 
 footer{
-padding:25px;
-opacity:.7;
+padding:20px;
 }
 </style>
 </head>
@@ -206,40 +133,38 @@ opacity:.7;
 </div>
 
 <div class="hero">
+
 <img src="logo.jpg" class="logo">
 <h1>DEUCE PROLIFIK</h1>
-<p>Gaming • Streaming • Community</p>
 
-<div id="liveStatus" class="live">🔴 LIVE NOW</div>
-<div id="viewerCount" class="viewer"></div>
+<!-- TWITCH -->
+<iframe class="stream"
+src="https://player.twitch.tv/?channel=deuceprolifik&parent=musicinnovative91-arch.github.io"></iframe>
 
-<a class="btn" href="https://www.twitch.tv/deuceprolifik" target="_blank">Watch on Twitch</a>
+<!-- YOUTUBE -->
+<iframe class="youtube"
+src="https://www.youtube.com/embed/OGwPJytYDHM"></iframe>
+
 </div>
 
 <div class="section" id="stream">
-<h2>Live Stream</h2>
-
-<div class="streamWrap">
-<iframe class="stream" src="https://player.twitch.tv/?channel=deuceprolifik&parent=musicinnovative91-arch.github.io" allowfullscreen></iframe>
-
-<iframe class="chat" src="https://www.twitch.tv/embed/deuceprolifik/chat?parent=musicinnovative91-arch.github.io"></iframe>
-</div>
-
-<div id="offlineMessage" class="offline">STREAM STARTING SOON</div>
+<h2>Live Chat</h2>
+<iframe class="chat"
+src="https://www.twitch.tv/embed/deuceprolifik/chat?parent=musicinnovative91-arch.github.io"></iframe>
 </div>
 
 <div class="section" id="clips">
-<h2>Recent Clips</h2>
+<h2>Clips</h2>
 
 <div class="clips">
 <iframe class="clip" src="https://clips.twitch.tv/embed?clip=AwkwardHelplessSalamanderPastaThat&parent=musicinnovative91-arch.github.io"></iframe>
-
 <iframe class="clip" src="https://clips.twitch.tv/embed?clip=InventiveGenerousTruffleTriHard&parent=musicinnovative91-arch.github.io"></iframe>
 </div>
+
 </div>
 
 <div class="section" id="schedule">
-<h2>Stream Schedule</h2>
+<h2>Schedule</h2>
 
 <div class="schedule">
 <table>
@@ -251,49 +176,22 @@ opacity:.7;
 <tr><td>Sunday</td><td>6 AM – 11 AM</td></tr>
 </table>
 </div>
+
 </div>
 
 <div class="section" id="follow">
 <h2>Follow</h2>
 
 <div class="social">
-<a href="https://www.instagram.com/deuceyp1982/">Instagram</a>
-<a href="https://www.tiktok.com/@deucey39">TikTok</a>
-<a href="https://www.twitch.tv/deuceprolifik">Twitch</a>
+<a class="instagram" href="https://www.instagram.com/deuceyp1982/">Instagram</a>
+<a class="tiktok" href="https://www.tiktok.com/@deucey39">TikTok</a>
+<a class="youtubeLink" href="https://www.youtube.com/">YouTube</a>
+<a class="twitch" href="https://www.twitch.tv/deuceprolifik">Twitch</a>
 </div>
+
 </div>
 
 <footer>© 2026 Deuce Prolifik</footer>
-
-<script>
-async function checkLive(){
-try{
-let response=await fetch("https://decapi.me/twitch/uptime/deuceprolifik");
-let text=await response.text();
-
-if(!text.includes("offline")){
-document.getElementById("liveStatus").style.display="block";
-document.getElementById("offlineMessage").style.display="none";
-}else{
-document.getElementById("offlineMessage").style.display="block";
-}
-}catch(e){}
-}
-
-async function viewers(){
-try{
-let res=await fetch("https://decapi.me/twitch/viewercount/deuceprolifik");
-let count=await res.text();
-document.getElementById("viewerCount").innerHTML="👥 "+count+" watching";
-}catch(e){}
-}
-
-checkLive();
-viewers();
-
-setInterval(checkLive,60000);
-setInterval(viewers,60000);
-</script>
 
 </body>
 </html>
