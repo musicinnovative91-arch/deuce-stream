@@ -3,217 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deuce Prolifik | Gaming Stream</title>
+<title>About | Deuce Prolifik</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family: 'Orbitron', Arial, sans-serif;
-  color:white;
-  text-align:center;
-  background:url("your-background.jpg") no-repeat center center fixed;
-  background-size:cover;
-  background-position:center center;
-  overflow-x:hidden;
-  position:relative;
+body {
+  margin: 0;
+  font-family: 'Orbitron', Arial;
+  color: white;
+  text-align: center;
+  background: black url('your-background.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
 }
 
-body::after{
-  content:"";
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:radial-gradient(circle at 25% 30%,rgba(145,71,255,.3),transparent 40%),radial-gradient(circle at 70% 70%,rgba(255,71,200,.25),transparent 40%);
-  animation:moveGlow 14s infinite alternate;
-  pointer-events:none;
-  z-index:1;
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
 }
 
-@keyframes moveGlow {
-  0% { background-position: 0% 0%, 100% 100%; }
-  100% { background-position: 100% 0%, 0% 100%; }
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  padding: 15px;
+  z-index: 10;
 }
 
-.nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:rgba(0,0,0,.7);
-  padding:12px 0;
-  z-index:10;
-  box-shadow:0 2px 10px rgba(0,0,0,0.5);
+.nav a {
+  margin: 0 15px;
+  color: #a970ff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.nav a{
-  margin:0 12px;
-  color:#ff8c00;
-  text-decoration:none;
-  font-weight:700;
-  transition: color 0.3s ease;
+.content {
+  padding: 140px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-.nav a:hover{
-  color:#ff4d4d;
+.tagline {
+  font-size: 1.4em;
+  margin: 15px 0 30px;
+  color: #ff8c00;
+  text-shadow: 0 0 10px #ff8c00, 0 0 20px #ffcc00;
 }
 
-.hero{
-  padding:140px 15px 60px;
-  z-index:2;
-  position:relative;
+/* Video */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin-top: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #a970ff, 0 0 40px #a970ff, 0 0 60px #a970ff;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-.logo{
-  width:220px;
-  max-width:60%;
-  border-radius:15px;
-  box-shadow:0 0 80px #ff8c00;
-  margin-bottom:15px;
-  transition: transform 0.3s ease;
+.video-container:hover {
+  box-shadow: 0 0 30px #a970ff, 0 0 60px #a970ff, 0 0 90px #a970ff;
 }
 
-.logo:hover{
-  transform:scale(1.05);
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: none;
 }
 
-h1{
-  font-size:2.4em;
-  margin:0 0 15px;
-  text-shadow: 0 0 15px #ff8c00, 0 0 30px #ffcc00, 0 0 50px #ff00ff;
+/* Buttons */
+.buttons {
+  margin-top: 25px;
 }
 
-.live-now {
-  display:inline-block;
-  background: linear-gradient(90deg, #ff0000, #ff8c00);
-  color:white;
-  font-weight:bold;
-  padding:12px 25px;
-  border-radius:15px;
-  margin-bottom:20px;
-  text-decoration:none;
-  font-size:1.2em;
-  animation: pulse 1.2s infinite;
-  box-shadow:0 0 25px #ff8c00;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
 }
 
-.live-now:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 35px #ff4d4d;
+/* Subscribe */
+.subscribe {
+  background: linear-gradient(90deg, #ff0000, #ff4d4d);
+  color: white;
+  box-shadow: 0 0 15px #ff0000;
 }
 
-@keyframes pulse {
-  50% { transform: scale(1.05); }
+.subscribe:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ff4d4d;
 }
 
-.stream, .youtube{
-  width:90%;
-  max-width:900px;
-  height:400px;
-  border-radius:20px;
-  margin:20px auto;
-  display:block;
-  box-shadow:0 0 35px rgba(255,140,0,0.7);
+/* Channel */
+.channel {
+  background: linear-gradient(90deg, #a970ff, #6a00ff);
+  color: white;
+  box-shadow: 0 0 15px #a970ff;
 }
 
-.section{
-  padding:60px 15px;
-}
-
-.chat{
-  width:95%;
-  max-width:400px;
-  height:360px;
-  border-radius:20px;
-  margin:15px auto;
-  box-shadow:0 0 25px rgba(255,140,0,0.6);
-}
-
-.clips{
-  display:flex;
-  gap:15px;
-  overflow-x:auto;
-  justify-content:center;
-}
-
-.clip{
-  min-width:260px;
-  height:150px;
-  border-radius:15px;
-  box-shadow:0 0 20px rgba(255,140,0,0.5);
-}
-
-.schedule{
-  background:rgba(20,20,37,.85);
-  padding:20px;
-  border-radius:20px;
-  max-width:600px;
-  margin:auto;
-  box-shadow:0 0 30px rgba(255,140,0,0.5);
-}
-
-table{
-  width:100%;
-  border-collapse:collapse;
-}
-
-table th, table td{
-  padding:10px;
-  border-bottom:1px solid rgba(255,255,255,0.2);
-}
-
-.social a{
-  margin:0 10px;
-  font-weight:bold;
-  text-decoration:none;
-  color:#ff8c00;
-  transition: color 0.3s ease;
-}
-
-.social a:hover{
-  color:#ff4d4d;
-}
-
-.games-logos {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:20px;
-  margin-top:15px;
-}
-.games-logos img {
-  width:80px;
-  transition: transform 0.3s ease;
-}
-.games-logos img:hover{
-  transform:scale(1.1);
-}
-
-footer{
-  padding:20px;
-  text-shadow:0 0 15px #ff8c00;
-}
-
-@media (max-width:768px){
-  h1{ font-size:2em; }
-  .logo{ width:180px; }
-  .live-now{ font-size:1em; padding:10px 20px; }
-  .stream, .youtube{ height:300px; }
-  .chat{ height:300px; }
-  .clip{ height:130px; min-width:220px; }
-}
-
-@media (max-width:480px){
-  .hero{ padding:100px 10px 50px; }
-  h1{ font-size:1.6em; }
-  .logo{ width:150px; }
-  .live-now{ font-size:.9em; padding:8px 16px; }
-  .stream, .youtube{ height:250px; }
-  .chat{ height:250px; }
-  .clip{ height:120px; min-width:200px; }
+.channel:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #a970ff;
 }
 </style>
 </head>
@@ -223,86 +130,50 @@ footer{
 <div class="nav">
   <a href="index.html">Home</a>
   <a href="about.html">About Me</a>
-  <a href="#stream">Stream</a>
-  <a href="#clips">Clips</a>
-  <a href="#schedule">Schedule</a>
-  <a href="#follow">Follow</a>
+  <a href="index.html#stream">Stream</a>
+  <a href="index.html#clips">Clips</a>
+  <a href="index.html#schedule">Schedule</a>
+  <a href="index.html#follow">Follow</a>
 </div>
 
-<div class="hero">
-  <img src="logo.jpg" class="logo">
-  <h1>DEUCE PROLIFIK</h1>
+<div class="content">
+  <h1>About Me</h1>
 
-  <a href="https://www.twitch.tv/deuceprolifik" target="_blank" class="live-now">LIVE NOW</a>
+  <div class="tagline">
+    Just a Streamer Doing What He Loves. Having Fun!!! (Hecky Yeah)
+  </div>
 
-  <!-- TWITCH STREAM -->
-  <iframe class="stream"
-    src="https://player.twitch.tv/?channel=deuceprolifik&parent=deuceprolifik.com&parent=www.deuceprolifik.com"
-    allowfullscreen>
-  </iframe>
+  <p>
+    Welcome to Deuce Prolifik. I’m a streamer documenting my journey,
+    improving every day, and bringing real energy to gaming and content.
+  </p>
 
-  <!-- UPDATED YOUTUBE -->
-  <iframe class="youtube"
-    src="https://www.youtube.com/embed/ZQwEvApn9P8"
-    allowfullscreen>
-  </iframe>
-</div>
+  <p>
+    Follow the grind as I level up, test games, and build something bigger.
+  </p>
 
-<div class="section" id="stream">
-  <h2>Live Chat</h2>
-  <iframe class="chat"
-    src="https://www.twitch.tv/embed/deuceprolifik/chat?parent=deuceprolifik.com&parent=www.deuceprolifik.com">
-  </iframe>
-</div>
-
-<div class="section" id="clips">
-  <h2>Clips</h2>
-  <div class="clips">
-    <iframe class="clip"
-      src="https://clips.twitch.tv/embed?clip=AwkwardHelplessSalamanderPastaThat&parent=deuceprolifik.com&parent=www.deuceprolifik.com">
-    </iframe>
-
-    <iframe class="clip"
-      src="https://clips.twitch.tv/embed?clip=InventiveGenerousTruffleTriHard&parent=deuceprolifik.com&parent=www.deuceprolifik.com">
+  <!-- VIDEO (NO AUTOPLAY) -->
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/ZQwEvApn9P8"
+      title="YouTube video player"
+      allow="encrypted-media"
+      allowfullscreen>
     </iframe>
   </div>
-</div>
 
-<div class="section" id="schedule">
-  <h2>Schedule</h2>
-  <div class="schedule">
-    <table>
-      <tr><th>Day</th><th>Time</th></tr>
-      <tr><td>Monday</td><td>6 AM – 11 AM</td></tr>
-      <tr><td>Thursday</td><td>3 PM – 7 PM</td></tr>
-      <tr><td>Friday</td><td>6 AM – 11 AM</td></tr>
-      <tr><td>Saturday</td><td>6 AM – 11 AM</td></tr>
-      <tr><td>Sunday</td><td>6 AM – 11 AM</td></tr>
-    </table>
+  <!-- BUTTONS -->
+  <div class="buttons">
+    <a href="https://www.youtube.com/@DeuceProflik?sub_confirmation=1" target="_blank" class="btn subscribe">
+      🔴 Subscribe
+    </a>
+
+    <a href="https://www.youtube.com/@DeuceProflik" target="_blank" class="btn channel">
+      🎥 Visit Channel
+    </a>
   </div>
-</div>
 
-<div class="section" id="follow">
-  <h2>Follow</h2>
-  <div class="social">
-    <a href="https://www.instagram.com/deuceyp1982/">Instagram</a>
-    <a href="https://www.tiktok.com/@deucey39">TikTok</a>
-    <a href="https://www.youtube.com/">YouTube</a>
-    <a href="https://www.twitch.tv/deuceprolifik">Twitch</a>
-  </div>
 </div>
-
-<div class="section" id="games">
-  <h2>Games I Play</h2>
-  <div class="games-logos">
-    <img src="game1.png">
-    <img src="game2.png">
-    <img src="game3.png">
-    <img src="game4.png">
-  </div>
-</div>
-
-<footer>© 2026 Deuce Prolifik</footer>
 
 </body>
 </html>
