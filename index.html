@@ -10,7 +10,7 @@
 <style>
 body{
   margin:0;
-  font-family: 'Orbitron', Arial, sans-serif;
+  font-family:'Orbitron',Arial,sans-serif;
   color:white;
   text-align:center;
   background:url("your-background.jpg") no-repeat center center fixed;
@@ -19,7 +19,6 @@ body{
   position:relative;
 }
 
-/* Glow background */
 body::after{
   content:"";
   position:fixed;
@@ -33,9 +32,9 @@ body::after{
   z-index:1;
 }
 
-@keyframes moveGlow {
-  0% { background-position: 0% 0%, 100% 100%; }
-  100% { background-position: 100% 0%, 0% 100%; }
+@keyframes moveGlow{
+  0%{background-position:0% 0%,100% 100%;}
+  100%{background-position:100% 0%,0% 100%;}
 }
 
 .nav{
@@ -56,7 +55,6 @@ body::after{
 
 .hero{
   padding:140px 15px 60px;
-  position:relative;
 }
 
 .logo{
@@ -72,7 +70,7 @@ h1{
 
 .live-now{
   display:inline-block;
-  background: linear-gradient(90deg,#ff0000,#ff8c00);
+  background:linear-gradient(90deg,#ff0000,#ff8c00);
   padding:12px 25px;
   border-radius:15px;
   margin:20px 0;
@@ -102,48 +100,22 @@ h1{
 
 .clips{
   display:flex;
-  gap:15px;
+  gap:20px;
   overflow-x:auto;
   justify-content:center;
+  padding:10px;
 }
 
 .clip{
-  min-width:260px;
-  height:150px;
+  min-width:320px;
+  height:180px;
   border-radius:15px;
+  transition:0.3s;
 }
 
-/* 🔥 GAME LOGO INTERACTIONS */
-.games-logos {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:20px;
-  margin-top:20px;
-}
-
-.games-logos img {
-  width:80px;
-  border-radius:12px;
-  transition: all 0.25s ease;
-  cursor:pointer;
-}
-
-/* Hover */
-.games-logos img:hover{
-  transform: translateY(-10px) scale(1.1);
-  box-shadow: 
-    0 0 15px #ff8c00,
-    0 0 30px #ff8c00;
-}
-
-/* Click (pop forward) */
-.games-logos img:active{
-  transform: translateY(-5px) scale(1.25);
-  box-shadow: 
-    0 0 25px #ff8c00,
-    0 0 50px #ff8c00,
-    0 0 80px #ff00ff;
+.clip:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 20px #ff8c00;
 }
 
 .schedule{
@@ -172,8 +144,7 @@ footer{
 <body>
 
 <div class="nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About Me</a>
+  <a href="#">Home</a>
   <a href="#stream">Stream</a>
   <a href="#clips">Clips</a>
   <a href="#schedule">Schedule</a>
@@ -187,31 +158,41 @@ footer{
   <a href="https://www.twitch.tv/deuceprolifik" target="_blank" class="live-now">LIVE NOW</a>
 
   <iframe class="stream"
-    src="https://player.twitch.tv/?channel=deuceprolifik&parent=deuceprolifik.com&parent=www.deuceprolifik.com&parent=deuceprolifik.github.io">
+    src="https://player.twitch.tv/?channel=deuceprolifik&parent=deuceprolifik.github.io">
   </iframe>
 
   <iframe class="youtube"
-    src="https://www.youtube.com/watch?v=OGwPJytYDHM">
+    src="https://www.youtube.com/embed/OGwPJytYDHM">
   </iframe>
 </div>
 
 <div class="section" id="stream">
   <h2>Live Chat</h2>
   <iframe class="chat"
-    src="https://www.twitch.tv/embed/deuceprolifik/chat?parent=deuceprolifik.com&parent=www.deuceprolifik.com&parent=deuceprolifik.github.io">
+    src="https://www.twitch.tv/embed/deuceprolifik/chat?parent=deuceprolifik.github.io">
   </iframe>
 </div>
 
 <div class="section" id="clips">
   <h2>Clips</h2>
   <div class="clips">
+
     <iframe class="clip"
-      src="https://clips.twitch.tv/embed?clip=FriendlyDarlingPancakeWow&parent=deuceprolifik.com&parent=www.deuceprolifik.com&parent=deuceprolifik.github.io">
+      src="https://clips.twitch.tv/embed?clip=FriendlyDarlingPancakeWow&parent=deuceprolifik.github.io">
     </iframe>
 
     <iframe class="clip"
-      src="https://clips.twitch.tv/embed?clip=InquisitiveSparklingTigerPanicVis&parent=deuceprolifik.com&parent=www.deuceprolifik.com&parent=deuceprolifik.github.io">
+      src="https://clips.twitch.tv/embed?clip=InquisitiveSparklingTigerPanicVis&parent=deuceprolifik.github.io">
     </iframe>
+
+    <iframe class="clip"
+      src="https://clips.twitch.tv/embed?clip=ZealousAmericanKathyMcaT-yeuCeXotAWXTlpxc&parent=deuceprolifik.github.io">
+    </iframe>
+
+    <iframe class="clip"
+      src="https://clips.twitch.tv/embed?clip=EncouragingApatheticTaroDoubleRainbow-6MX84GYpQaiL8cLP&parent=deuceprolifik.github.io">
+    </iframe>
+
   </div>
 </div>
 
@@ -236,16 +217,6 @@ footer{
     <a href="https://www.tiktok.com/@deucey39">TikTok</a>
     <a href="https://www.youtube.com/@DeuceProflik">YouTube</a>
     <a href="https://www.twitch.tv/deuceprolifik">Twitch</a>
-  </div>
-</div>
-
-<div class="section" id="games">
-  <h2>Games I Play</h2>
-  <div class="games-logos">
-    <img src="game1.png">
-    <img src="game2.png">
-    <img src="game3.png">
-    <img src="game4.png">
   </div>
 </div>
 
